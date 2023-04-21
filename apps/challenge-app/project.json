@@ -1,0 +1,84 @@
+{
+  "name": "challenge-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/challenge-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/challenge-app",
+        "index": "apps/challenge-app/src/index.html",
+        "baseHref": "/",
+        "main": "apps/challenge-app/src/main.tsx",
+        "polyfills": "apps/challenge-app/src/polyfills.ts",
+        "tsConfig": "apps/challenge-app/tsconfig.app.json",
+        "assets": [
+          "apps/challenge-app/src/favicon.ico",
+          "apps/challenge-app/src/assets"
+        ],
+        "styles": ["apps/challenge-app/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/challenge-app/src/environments/environment.ts",
+              "with": "apps/challenge-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "extractCss": true,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "challenge-app:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "challenge-app:build:production",
+          "hmr": false
+        },
+        "development": {
+          "buildTarget": "challenge-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/challenge-app/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/challenge-app"],
+      "options": {
+        "jestConfig": "apps/challenge-app/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
