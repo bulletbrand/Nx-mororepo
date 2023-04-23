@@ -1,8 +1,6 @@
 import styles from './app.module.scss';
 import { ChallengeEntry } from './challengeEntry';
-
 import { ReactComponent as Logo } from './logo.svg';
-import star from './star.svg';
 
 export function App() {
   return (
