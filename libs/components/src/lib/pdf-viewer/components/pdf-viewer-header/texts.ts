@@ -1,0 +1,4 @@
+export const HEADER_TEXTS = {
+  LOADED_URL: 'LOADED URL',
+  RENDER_TIME: 'RENDER TIME'
+}

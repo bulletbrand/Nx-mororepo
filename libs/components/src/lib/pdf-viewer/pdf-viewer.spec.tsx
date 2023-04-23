@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Components from './components';
+import PdfViewer from './pdf-viewer';
 
-describe('Components', () => {
+describe('PdfViewer', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Components />);
+    const { baseElement } = render(<PdfViewer filePath={''}/>);
     expect(baseElement).toBeTruthy();
   });
 });

@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  gap: 24px;
+  padding: 8px;
+  margin-bottom: 20px;
+
+   .infoSection {
+     width: 50%;
+     display: flex;
+     flex-direction: column;
+
+     .title {
+       color: rgb(139,144,160);
+       font-size: 12px;
+       font-weight: 400;
+       margin-bottom: 8px;
+     }
+
+     .loadedUrlText {
+       color: #505565;
+       font-weight: 400;
+       font-size: 12px;
+       line-height: 16px;
+       background: #D3D4D8;
+       border-radius: 50px;
+       padding: 4px 10px;
+       overflow: hidden;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+     }
+
+     .renderTimeText {
+       color: #232735;
+       padding: 4px 10px;
+       line-height: 16px;
+     }
+   }
+}

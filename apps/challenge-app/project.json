@@ -20,7 +20,8 @@
         ],
         "styles": ["apps/challenge-app/src/styles.scss"],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "apps/challenge-app/webpack.config.js",
+        "isolatedConfig" : true
       },
       "configurations": {
         "production": {

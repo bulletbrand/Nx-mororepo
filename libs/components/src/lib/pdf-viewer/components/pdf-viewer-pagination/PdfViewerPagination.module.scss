@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 8px;
+
+  .pageInfo {
+    font-size: 14px;
+  }
+}
