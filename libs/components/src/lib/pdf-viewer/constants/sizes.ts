@@ -1,0 +1,5 @@
+export const DEFAULT_LIST_HEIGHT = 600;
+
+export const DEFAULT_LIST_WIDTH = 600;
+
+export const DEFAULT_DOCUMENT_HEIGHT = 500;
